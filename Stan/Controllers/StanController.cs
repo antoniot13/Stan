@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Stan.Models;
 using Stan.SQLData;
+using System.Diagnostics;
 
 namespace Stan.Controllers
 {
@@ -19,6 +20,12 @@ namespace Stan.Controllers
         public ActionResult Index()
         {
             return View(db.Stans.ToList());
+        }
+
+        // GET: Mine
+        [Authorize]
+        public ActionResult Mine() {
+            return View(from stan in db.Stans where stan.GazdaId == User.Identity.Name select stan);
         }
 
         // GET: Stan/Details/5
@@ -49,7 +56,7 @@ namespace Stan.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "Id,Kvadratura,BrojNaSobi,NaKojSprat,ImaLift,ImaKujna,ImaToalet,ImaTerasa,Namesten,DatumObjaven,KontaktIme,KontaktBroj,Lokacija,Opis")] SQLData.Stan stan)
+        public ActionResult Create([Bind(Include = "Id,Kvadratura,BrojNaSobi,NaKojSprat,ImaLift,ImaKujna,ImaToalet,ImaTerasa,Namesten,DatumObjaven,KontaktIme,KontaktBroj,Lokacija,Opis")] SQLData.Stan stan, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
@@ -57,6 +64,14 @@ namespace Stan.Controllers
                 stan.DatumObjaven = DateTime.Now;
                 db.Stans.Add(stan);
                 db.SaveChanges();
+
+                if (file != null && file.ContentLength > 0) {
+                    string Filename = stan.Id + "_" + stan.GazdaId + "." + file.FileName.Split('.').Last();
+                    string SavePath = Server.MapPath("~/Images/") + Filename;
+                    Debug.WriteLine("Save: " + SavePath);
+                    file.SaveAs(SavePath);
+                }
+
                 return RedirectToAction("Index");
             }
 

@@ -279,9 +279,11 @@
     <Content Include="Views\Stan\Details.cshtml" />
     <Content Include="Views\Stan\Edit.cshtml" />
     <Content Include="Views\Stan\Index.cshtml" />
+    <Content Include="Views\Stan\Mine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
