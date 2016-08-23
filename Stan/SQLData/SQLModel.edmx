@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SQLModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SQLModelStoreContainer">
+    <EntitySet Name="Stans" EntityType="SQLModel.Store.Stans" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Stans">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GazdaId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kvadratura" Type="smallint" Nullable="false" />
+    <Property Name="BrojNaSobi" Type="smallint" Nullable="false" />
+    <Property Name="NaKojSprat" Type="smallint" Nullable="false" />
+    <Property Name="ImaLift" Type="bit" Nullable="false" />
+    <Property Name="ImaKujna" Type="bit" Nullable="false" />
+    <Property Name="ImaToalet" Type="bit" Nullable="false" />
+    <Property Name="ImaTerasa" Type="bit" Nullable="false" />
+    <Property Name="Namesten" Type="bit" Nullable="false" />
+    <Property Name="DatumObjaven" Type="datetime" Nullable="false" />
+    <Property Name="KontaktIme" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KontaktBroj" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Lokacija" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Opis" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SQLModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="SQLModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Stans" EntityType="SQLModel.Stan" />
+        </EntityContainer>
+        <EntityType Name="Stan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GazdaId" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Kvadratura" Type="Int16" Nullable="false" />
+          <Property Name="BrojNaSobi" Type="Int16" Nullable="false" />
+          <Property Name="NaKojSprat" Type="Int16" Nullable="false" />
+          <Property Name="ImaLift" Type="Boolean" Nullable="false" />
+          <Property Name="ImaKujna" Type="Boolean" Nullable="false" />
+          <Property Name="ImaToalet" Type="Boolean" Nullable="false" />
+          <Property Name="ImaTerasa" Type="Boolean" Nullable="false" />
+          <Property Name="Namesten" Type="Boolean" Nullable="false" />
+          <Property Name="DatumObjaven" Type="DateTime" Nullable="false" />
+          <Property Name="KontaktIme" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="KontaktBroj" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Lokacija" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Opis" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SQLModelStoreContainer" CdmEntityContainer="SQLModelContainer">
+    <EntitySetMapping Name="Stans">
+      <EntityTypeMapping TypeName="IsTypeOf(SQLModel.Stan)">
+        <MappingFragment StoreEntitySet="Stans">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GazdaId" ColumnName="GazdaId" />
+          <ScalarProperty Name="Kvadratura" ColumnName="Kvadratura" />
+          <ScalarProperty Name="BrojNaSobi" ColumnName="BrojNaSobi" />
+          <ScalarProperty Name="NaKojSprat" ColumnName="NaKojSprat" />
+          <ScalarProperty Name="ImaLift" ColumnName="ImaLift" />
+          <ScalarProperty Name="ImaKujna" ColumnName="ImaKujna" />
+          <ScalarProperty Name="ImaToalet" ColumnName="ImaToalet" />
+          <ScalarProperty Name="ImaTerasa" ColumnName="ImaTerasa" />
+          <ScalarProperty Name="Namesten" ColumnName="Namesten" />
+          <ScalarProperty Name="DatumObjaven" ColumnName="DatumObjaven" />
+          <ScalarProperty Name="KontaktIme" ColumnName="KontaktIme" />
+          <ScalarProperty Name="KontaktBroj" ColumnName="KontaktBroj" />
+          <ScalarProperty Name="Lokacija" ColumnName="Lokacija" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

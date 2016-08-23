@@ -1,0 +1,131 @@
+﻿@model Stan.SQLData.Stan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Stan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <!--
+        <dt>
+            @Html.DisplayNameFor(model => model.GazdaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GazdaId)
+        </dd>-->
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kvadratura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kvadratura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojNaSobi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojNaSobi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NaKojSprat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NaKojSprat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImaLift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImaLift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImaKujna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImaKujna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImaToalet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImaToalet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImaTerasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImaTerasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Namesten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Namesten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumObjaven)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumObjaven)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KontaktIme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KontaktIme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KontaktBroj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KontaktBroj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lokacija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lokacija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
