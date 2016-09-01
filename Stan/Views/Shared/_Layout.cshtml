@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="stanApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +29,7 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
+
     </div>
     <div class="container body-content">
         @RenderBody()
@@ -40,6 +41,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angularjs")
+    @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required: false)
 </body>
-</html>
+</htmlng-app="stanApp">

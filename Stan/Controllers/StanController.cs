@@ -149,5 +149,12 @@ namespace Stan.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public JsonResult GetPesrons()
+        {
+            StanoviDB e = new StanoviDB();
+            var result = e.Stans.ToList();
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }

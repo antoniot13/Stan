@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2><span style="font-size:3em;" class="glyphicon glyphicon-home"></span> Најди си сместување </h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -55,6 +55,12 @@
         </th>
         <th></th>
     </tr>
+
+    <div ng-controller="StudentController" class="row" ng-repeat="item in students">
+        <p> {{item.Id}} </p>
+        <p> {{item.Kvadratura}}</p>
+
+    </div>
 
 @foreach (var item in Model) {
     <tr>
