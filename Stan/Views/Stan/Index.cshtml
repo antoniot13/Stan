@@ -3,13 +3,17 @@
 @{
     ViewBag.Title = "Index";
 }
+<br /> <br />
+<header class="jumbotron">
+    
+    <h1>  <span class="glyphicon glyphicon-home"></span> &nbsp; Најди сместување </h1>
+</header>
 
-<h2><span style="font-size:3em;" class="glyphicon glyphicon-home"></span> Најди си сместување </h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             Slika
@@ -54,18 +58,34 @@
             @Html.DisplayNameFor(model => model.Opis)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-    <div ng-controller="StudentController" class="row" ng-repeat="item in students">
-        <p> {{item.Id}} </p>
-        <p> {{item.Kvadratura}}</p>
+<div class="row">
+    <div class="col-md-12">
 
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    @{string fName = item.Id + "_" + item.GazdaId + ".png"; }
+                    <img src="~/Images/@fName" height="200" width="150" />
+                    <div class="caption">
+                        <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>
+                        <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
+                        <p>Број на соби: @Html.DisplayFor(modelItem => item.BrojNaSobi)</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Повеќе!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
+    @*<tr>
         <td>
-            @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
+            @{string fName = item.Id + "_" + item.GazdaId + ".png"; }
             <img src="~/Images/@fName" height="50" width="50" />
         </td>
         <td>
@@ -113,6 +133,6 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
-}
+}*@
 
-</table>
+@*</table>*@ 
