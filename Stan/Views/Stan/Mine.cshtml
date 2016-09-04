@@ -15,7 +15,7 @@
         @foreach (var item in Model) {
             <div class="col-md-3" style="margin-bottom:20px">
                 <div class="thumbnail">
-                    @{string fName = item.Id + "_" + item.GazdaId + ".png"; }
+                    @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
                     <img src="~/Images/@fName" height="200" width="150" />
                     <div class="caption">
                         <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>

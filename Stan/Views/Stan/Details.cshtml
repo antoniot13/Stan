@@ -1,4 +1,4 @@
-﻿@model Stan.Models.RegisterViewModel
+﻿@model Stan.SQLData.Stan
 
 @{
     ViewBag.Title = "Детали";
@@ -121,6 +121,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
         </dd>
 
     </dl>
