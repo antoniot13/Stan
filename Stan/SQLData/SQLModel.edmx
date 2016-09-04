@@ -27,6 +27,7 @@
     <Property Name="KontaktBroj" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Lokacija" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Opis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cena" Type="smallint" Nullable="false" DefaultValue="0" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -54,6 +55,7 @@
           <Property Name="KontaktBroj" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Lokacija" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Opis" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Cena" Type="Int16" Nullable="false" DefaultValue="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -79,6 +81,7 @@
           <ScalarProperty Name="KontaktBroj" ColumnName="KontaktBroj" />
           <ScalarProperty Name="Lokacija" ColumnName="Lokacija" />
           <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Cena" ColumnName="Cena" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/23/2016 02:14:18
+-- Date Created: 09/04/2016 17:36:02
 -- Generated from EDMX file: C:\Users\nemesis\Desktop\test\Stan\Stan\SQLData\SQLModel.edmx
 -- --------------------------------------------------
 
@@ -46,7 +46,8 @@ CREATE TABLE [dbo].[Stans] (
     [KontaktIme] nvarchar(max)  NOT NULL,
     [KontaktBroj] nvarchar(max)  NOT NULL,
     [Lokacija] nvarchar(max)  NOT NULL,
-    [Opis] nvarchar(max)  NOT NULL
+    [Opis] nvarchar(max)  NOT NULL,
+    [Cena] smallint  NOT NULL
 );
 GO
 

@@ -50,13 +50,13 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                @Html.EditorFor(model => model.Kvadratura, new { htmlAttributes = new { @class = "form-control", placeholder = "Локација" } })
-                                @Html.ValidationMessageFor(model => model.Kvadratura, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Lokacija, new { htmlAttributes = new { @class = "form-control", placeholder = "Локација" } })
+                                @Html.ValidationMessageFor(model => model.Lokacija, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-md-4 col-md-offset-2">
                             <div class="form-group">
-                                @Html.EditorFor(model => model.Kvadratura, new { htmlAttributes = new { @class = "form-control", placeholder = "Цена" } })
+                                @Html.EditorFor(model => model.Kvadratura, new { htmlAttributes = new { @class = "form-control", placeholder = "Квадратура" } })
                                 @Html.ValidationMessageFor(model => model.Kvadratura, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -67,16 +67,16 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="row">
-                        <div class="col-md-4">
+                       <div class="col-md-4">
                             <div class="form-group">
-                                @Html.EditorFor(model => model.Kvadratura, new { htmlAttributes = new { @class = "form-control", placeholder = "Квадратура" } })
-                                @Html.ValidationMessageFor(model => model.Kvadratura, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Cena, new { htmlAttributes = new { @class = "form-control", placeholder = "Цена" } })
+                                @Html.ValidationMessageFor(model => model.Cena, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-md-4 col-md-offset-2">
                             <div class="form-group">
-                                @Html.EditorFor(model => model.Kvadratura, new { htmlAttributes = new { @class = "form-control", placeholder = "Број на соби" } })
-                                @Html.ValidationMessageFor(model => model.Kvadratura, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.BrojNaSobi, new { htmlAttributes = new { @class = "form-control", placeholder = "Број на соби" } })
+                                @Html.ValidationMessageFor(model => model.BrojNaSobi, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                         <div class="col-md-4 col-md-offset-2">
                             <div class="form-group">
                                 @Html.EditorFor(model => model.NaKojSprat, new { htmlAttributes = new { @class = "form-control", placeholder = "Спрат" } })
-                                @Html.ValidationMessageFor(model => model.Kvadratura, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.NaKojSprat, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group">
                                 @Html.EditorFor(model => model.KontaktBroj, new { htmlAttributes = new { @class = "form-control", placeholder = "Број за контакт" } })
