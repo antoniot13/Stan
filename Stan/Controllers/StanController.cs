@@ -41,7 +41,9 @@ namespace Stan.Controllers
                                          stan.Kvadratura <= kvDo &&
                                          stan.Cena >= ceOd &&
                                          stan.Cena <= ceDo &&
-                                         stan.Lokacija == Lokacija select stan;
+                                         stan.Lokacija == Lokacija
+                                         orderby stan.Cena descending
+                                         select stan;
             
             return View(Results);
         }
