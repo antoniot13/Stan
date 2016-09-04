@@ -1,32 +1,18 @@
 ﻿@model IEnumerable<Stan.SQLData.Stan>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Search";
 }
 <br /> <br />
-<header class="jumbotron">
-    
-    <h1>  <span class="glyphicon glyphicon-home"></span> &nbsp; Најди сместување </h1>
-</header>
-
-@using (Html.BeginForm("Search", "Stan", FormMethod.Post, new { enctype = "multipart/form-data" })) {
-    <input type="text" name="Lokacija" value="Lokacija">
-    <input type="text" name="KvadraturaOd" value="Kvadr. Od:">
-    <input type="text" name="KvadraturaDo" value="Kvadr. Do:">
-    <input type="text" name="CenaOd" value="Cena Od:">
-    <input type="text" name="CenaDo" value="Cena Do:">
-    <input type="submit" value="Search">
-}
 
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
 
 <div class="row">
     <div class="col-md-12">
 
-        @foreach (var item in Model)
-        {
+        @foreach (var item in Model) {
             <div class="col-md-3" style="margin-bottom:20px">
                 <div class="thumbnail">
                     @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
@@ -38,7 +24,7 @@
                         <p>Цена: @Html.DisplayFor(modelItem => item.Cena)</p>
                         <div class="row">
                             <div class="col-md-6 col-md-offset-6">
-                                <p>                                   
+                                <p>
                                     <a href='@Url.Action("Details", "Stan", new {id = item.Id })' class="btn btn-primary">Повеќе!</a>
                                 </p>
                             </div>
@@ -46,6 +32,6 @@
                     </div>
                 </div>
             </div>
-        }
+                        }
     </div>
 </div>

@@ -22,6 +22,30 @@ namespace Stan.Controllers
             return View(db.Stans.ToList());
         }
 
+        // POST: Search
+        [HttpPost]
+        public ActionResult Search(string Lokacija, string KvadraturaOd, string KvadraturaDo, string CenaOd, string CenaDo) {
+
+            int kvOd = 0;
+            int kvDo = int.MaxValue;
+            int.TryParse(KvadraturaOd, out kvOd);
+            int.TryParse(KvadraturaDo, out kvDo);
+
+            int ceOd = 0;
+            int ceDo = int.MaxValue;
+            int.TryParse(CenaOd, out ceOd);
+            int.TryParse(CenaDo, out ceDo);
+
+            IEnumerable<Stan.SQLData.Stan> Results = from stan in db.Stans
+                                         where stan.Kvadratura >= kvOd &&
+                                         stan.Kvadratura <= kvDo &&
+                                         stan.Cena >= ceOd &&
+                                         stan.Cena <= ceDo &&
+                                         stan.Lokacija == Lokacija select stan;
+            
+            return View(Results);
+        }
+
         // GET: Mine
         [Authorize]
         public ActionResult Mine() {
