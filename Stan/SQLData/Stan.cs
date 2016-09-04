@@ -14,6 +14,12 @@ namespace Stan.SQLData
     
     public partial class Stan
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Stan()
+        {
+            this.Cena = 0;
+        }
+    
         public int Id { get; set; }
         public string GazdaId { get; set; }
         public short Kvadratura { get; set; }
@@ -29,5 +35,6 @@ namespace Stan.SQLData
         public string KontaktBroj { get; set; }
         public string Lokacija { get; set; }
         public string Opis { get; set; }
+        public short Cena { get; set; }
     }
 }

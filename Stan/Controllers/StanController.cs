@@ -56,7 +56,7 @@ namespace Stan.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "Id,Kvadratura,BrojNaSobi,NaKojSprat,ImaLift,ImaKujna,ImaToalet,ImaTerasa,Namesten,DatumObjaven,KontaktIme,KontaktBroj,Lokacija,Opis")] SQLData.Stan stan, HttpPostedFileBase file)
+        public ActionResult Create([Bind(Include = "Id,Kvadratura,BrojNaSobi,NaKojSprat,ImaLift,ImaKujna,ImaToalet,ImaTerasa,Namesten,DatumObjaven,KontaktIme,KontaktBroj,Lokacija,Opis,Cena")] SQLData.Stan stan, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,8 @@ namespace Stan.Controllers
                 db.SaveChanges();
 
                 if (file != null && file.ContentLength > 0) {
-                    string Filename = stan.Id + "_" + stan.GazdaId + "." + file.FileName.Split('.').Last();
+                    //string Filename = stan.Id + "_" + stan.GazdaId + "." + file.FileName.Split('.').Last();
+                    string Filename = stan.Id + "_" + stan.GazdaId + ".jpg";
                     string SavePath = Server.MapPath("~/Images/") + Filename;
                     Debug.WriteLine("Save: " + SavePath);
                     file.SaveAs(SavePath);
@@ -100,7 +101,7 @@ namespace Stan.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Edit([Bind(Include = "Id,GazdaId,Kvadratura,BrojNaSobi,NaKojSprat,ImaLift,ImaKujna,ImaToalet,ImaTerasa,Namesten,DatumObjaven,KontaktIme,KontaktBroj,Lokacija,Opis")] SQLData.Stan stan)
+        public ActionResult Edit([Bind(Include = "Id,GazdaId,Kvadratura,BrojNaSobi,NaKojSprat,ImaLift,ImaKujna,ImaToalet,ImaTerasa,Namesten,DatumObjaven,KontaktIme,KontaktBroj,Lokacija,Opis,Cena")] SQLData.Stan stan)
         {
             if (ModelState.IsValid)
             {
