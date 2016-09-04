@@ -21,8 +21,13 @@
         {
             <div class="col-md-3" style="margin-bottom:20px">
                 <div class="thumbnail">
+<<<<<<< HEAD
+                    @{string fName = item.Id + "_" + item.GazdaId + ".png"; }
+                    <img class="img-thumbnail" src="~/Images/@fName" height="210" width="170" />
+=======
                     @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
                     <img src="~/Images/@fName" height="200" width="150" />
+>>>>>>> origin/master
                     <div class="caption">
                         <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>
                         <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
