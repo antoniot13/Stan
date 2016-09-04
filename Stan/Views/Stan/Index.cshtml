@@ -22,7 +22,7 @@
             <div class="col-md-3" style="margin-bottom:20px">
                 <div class="thumbnail">
                     @{string fName = item.Id + "_" + item.GazdaId + ".png"; }
-                    <img src="~/Images/@fName" height="200" width="150" />
+                    <img class="img-thumbnail" src="~/Images/@fName" height="210" width="170" />
                     <div class="caption">
                         <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>
                         <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
