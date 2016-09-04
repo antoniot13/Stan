@@ -42,7 +42,7 @@ namespace Stan.Controllers
                                          stan.Cena >= ceOd &&
                                          stan.Cena <= ceDo &&
                                          stan.Lokacija == Lokacija
-                                         orderby stan.Cena descending
+                                         orderby stan.Cena ascending
                                          select stan;
             
             return View(Results);
