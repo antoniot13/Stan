@@ -19,7 +19,8 @@ namespace Stan.Controllers
             } else if (howMany > 1) {
                 return new JavaScriptSerializer().Serialize(db.Stans.Take(howMany).ToList());
             }
-            return "Error: use howMany = 1 or bigger!";
+            return "Error: use howMany = 1 or bigger! \n" +
+                "Example: ../Api/Get?howMany=3";
         }
     }
 }

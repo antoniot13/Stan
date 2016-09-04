@@ -49,9 +49,9 @@ namespace Stan.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Е-пошта")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Username")]
+        //[EmailAddress]
+        public string Username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +64,11 @@ namespace Stan.Models
 
     public class RegisterViewModel
     {
+
+        [Required]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Е-пошта")]
