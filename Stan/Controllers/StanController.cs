@@ -19,7 +19,9 @@ namespace Stan.Controllers
         // GET: Stan
         public ActionResult Index()
         {
-            return View(db.Stans.ToList());
+            List<SQLData.Stan> s = db.Stans.ToList();
+            s.Reverse();
+            return View(s);
         }
 
         // POST: Search
@@ -41,7 +43,9 @@ namespace Stan.Controllers
                                          stan.Kvadratura <= kvDo &&
                                          stan.Cena >= ceOd &&
                                          stan.Cena <= ceDo &&
-                                         stan.Lokacija == Lokacija select stan;
+                                         stan.Lokacija == Lokacija
+                                         orderby stan.Cena ascending
+                                         select stan;
             
             return View(Results);
         }
