@@ -19,7 +19,9 @@ namespace Stan.Controllers
         // GET: Stan
         public ActionResult Index()
         {
-            return View(db.Stans.ToList());
+            List<SQLData.Stan> s = db.Stans.ToList();
+            s.Reverse();
+            return View(s);
         }
 
         // POST: Search
