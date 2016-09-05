@@ -1,26 +1,7 @@
-var StudentApp = angular.module('stanApp', []);
-StudentApp.controller('StudentController', function ($scope, StudentService) {
- 
-    getStudents();
-    function getStudents() {
-        StudentService.getStudents()
-            .success(function (studs) {
-                $scope.students = studs;
-                console.log($scope.students);
-            })
-            .error(function (error) {
-                $scope.status = 'Unable to load customer data: ' + error.message;
-                console.log($scope.status);
-            });
-    }
+﻿var app = angular.module('myApp', []);
+app.controller('myCtrl', function ($scope, $http) {    
+    $http.get("http://localhost:57087/Api/Get?howMany=4")
+    .then(function (response) {
+        $scope.suggestions = response.data;        
+    });    
 });
- 
-StudentApp.factory('StudentService', ['$http', function ($http) {
- 
-    var StudentService = {};
-    StudentService.getStudents = function () {
-        return $http.get('/Stan/GetPersons');
-    };
-    return StudentService;
- 
-}]);

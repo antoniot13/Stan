@@ -248,6 +248,7 @@
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\errors.json" />

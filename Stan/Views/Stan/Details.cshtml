@@ -1,137 +1,127 @@
 ﻿@model Stan.SQLData.Stan
-
 @{
     ViewBag.Title = "Детали";
 }
 
+<div class="container">
+    <!-- Portfolio Item Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                <span class="glyphicon glyphicon-user" style="font-size:4.2vh"></span> @Html.DisplayFor(model => model.KontaktIme)
+                <small style="margin-left:20px"><span class="glyphicon glyphicon-phone"></span>@Html.DisplayFor(model => model.KontaktBroj)</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Portfolio Item Row -->
+    <div class="row">
+        <div class="col-md-6">
+            @{string fName = @Html.DisplayFor(model => model.Id) + "_" + @Html.DisplayFor(model => model.GazdaId) + ".jpg"; }
+            <img class="img-responsive" src="~/Images/@fName" height="250" width="450" alt="">
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <h3>Опис</h3>
+                <p>@Html.DisplayFor(model => model.Opis)</p>
+                <hr />
+            </div>
+            <div class="col-md-3">
+                <p><b>Локација:</b></p>
+                <p><b>Цена:</b></p>
+                <p><b>Квадратура:</b></p>
+                <p><b>Спрат:</b></p>
+                <p><b>Број на соби:</b></p>
+            </div>
+            <div class="col-md-3">
+                <p>@Html.DisplayFor(model => model.Lokacija)</p>
+                <p>@Html.DisplayFor(model => model.Cena) €</p>
+                <p>@Html.DisplayFor(model => model.Kvadratura)</p>
+                <p>@Html.DisplayFor(model => model.NaKojSprat)</p>
+                <p>@Html.DisplayFor(model => model.BrojNaSobi)</p>
+            </div>
+            <div class="col-md-2 col-md-offset-1">
+                <p><b>Лифт:</b></p>
+                <p><b>Кујна:</b></p>
+                <p><b>Тоалет:</b></p>
+                <p><b>Тераса:</b></p>
+                <p><b>Наместен:</b></p>
+            </div>
+            <div class="col-md-3">
+                @if (Model.ImaLift == true)
+                {
+                    <p>Да</p>
+                }
+                @if (Model.ImaLift == false)
+                {
+                    <p>Не   </p>
+                }
+                @if (Model.ImaKujna == true)
+                {
+                    <p>Да</p>
+                }
+                @if (Model.ImaKujna == false)
+                {
+                    <p>Не</p>
+                }
+                @if (Model.ImaToalet == true)
+                {
+                    <p>Да</p>
+                }
+                @if (Model.ImaToalet == false)
+                {
+                    <p>Не</p>
+                }
+                @if (Model.ImaTerasa == true)
+                {
+                    <p>Да</p>
+                }
+                @if (Model.ImaTerasa == false)
+                {
+                    <p>Не</p>
+                }
+                @if (Model.Namesten == true)
+                {
+                    <p>Да</p>
+                }
+                @if (Model.Namesten == false)
+                {
+                    <p>Не</p>
+                }
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <!--
-        <dt>
-            @Html.DisplayNameFor(model => model.GazdaId)
-        </dt>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.GazdaId)
-        </dd>-->
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Kvadratura)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Kvadratura)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BrojNaSobi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BrojNaSobi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NaKojSprat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NaKojSprat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImaLift)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImaLift)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImaKujna)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImaKujna)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImaToalet)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImaToalet)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImaTerasa)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImaTerasa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Namesten)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Namesten)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DatumObjaven)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DatumObjaven)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.KontaktIme)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.KontaktIme)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.KontaktBroj)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.KontaktBroj)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Lokacija)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Lokacija)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Opis)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Opis)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cena)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cena) €
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
-    @Html.ActionLink("Назад", "Index")
-</p>
+    </div>
+    <!-- /.row -->
+    <div class="row" ng-app="myApp" ng-controller="myCtrl">
+        <div class="col-lg-12">
+            <h3 class="page-header">Препораки</h3>
+        </div>
+        <div class="col-md-3" style="margin-bottom:20px" ng-repeat="item in suggestions">
+            <div class="well thumbnail">
+                
+                <img class="img-responsive img-rounded" src="~/Images/{{item.Id}}_{{item.GazdaId}}.jpg" height="150" width="150">
+                <div class="caption">
+                    <p>Локација: {{item.Lokacija}} </p>
+                    <p>Квадратура: {{item.Kvadratura}} m2</p>
+                    <p>Број на соби: {{item.BrojNaSobi}}</p>
+                    <p>Цена: {{item.Cena}}</p>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-6">
+                            <p>
+                                <a href="http://localhost:57087/Stan/Details/{{item.Id}}" class="btn btn-primary">Повеќе!</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <br />
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+        @Html.ActionLink("Назад", "Index")
+    </p>

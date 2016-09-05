@@ -49,7 +49,7 @@ namespace Stan.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "Корисничко име")]
         //[EmailAddress]
         public string Username { get; set; }
 
@@ -66,7 +66,7 @@ namespace Stan.Models
     {
 
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "КОрисничко име")]
         public string Username { get; set; }
 
         [Required]
