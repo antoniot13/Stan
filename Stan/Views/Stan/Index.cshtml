@@ -5,47 +5,69 @@
 }
 <br /> <br />
 <header class="jumbotron">
-    
+
     <h1>  <span class="glyphicon glyphicon-home"></span> &nbsp; Најди сместување </h1>
 </header>
 
-@using (Html.BeginForm("Search", "Stan", FormMethod.Post, new { enctype = "multipart/form-data" })) {
-    <input type="text" name="Lokacija" value="Lokacija">
-    <input type="text" name="KvadraturaOd" value="Kvadr. Od:">
-    <input type="text" name="KvadraturaDo" value="Kvadr. Do:">
-    <input type="text" name="CenaOd" value="Cena Od:">
-    <input type="text" name="CenaDo" value="Cena Do:">
-    <input type="submit" value="Search">
-}
-
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
-
 <div class="row">
-    <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Search", "Stan", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Локација" name="Lokacija">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Квадратура од:" name="KvadraturaOd">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Квадратура до:" name="KvadraturaDo">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Цена од:" name="CenaOd">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Цена до:" name="CenaDo">
+                </div>
+                <div class="col-md-2">
+                    <input class="btn btn-default" type="submit" value="Барај">
+                </div>
+                
+            }
+        </div>
+    </div>
 
-        @foreach (var item in Model)
-        {
-            <div class="col-md-3" style="margin-bottom:20px">
-                <div class="thumbnail">
-                    @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
-                    <img src="~/Images/@fName" height="200" width="150" />
-                    <div class="caption">
-                        <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>
-                        <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
-                        <p>Број на соби: @Html.DisplayFor(modelItem => item.BrojNaSobi)</p>
-                        <p>Цена: @Html.DisplayFor(modelItem => item.Cena) €</p>
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-6">
-                                <p>                                   
-                                    <a href='@Url.Action("Details", "Stan", new {id = item.Id })' class="btn btn-primary">Повеќе!</a>
-                                </p>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+
+    <br />
+
+    <div class="row">
+        <div class="col-md-12">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3" style="margin-bottom:20px">
+                    <div class="thumbnail">
+                        @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
+                        <img class="img-thumbnail" src="~/Images/@fName" height="200" width="150" />
+                        <div class="caption">
+                            <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>
+                            <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
+                            <p>Број на соби: @Html.DisplayFor(modelItem => item.BrojNaSobi)</p>
+                            <p>Цена: @Html.DisplayFor(modelItem => item.Cena)</p>
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-6">
+                                    <p>
+                                        <a href='@Url.Action("Details", "Stan", new {id = item.Id })' class="btn btn-primary">Повеќе!</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 </div>
