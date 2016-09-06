@@ -17,7 +17,12 @@ namespace Stan.Controllers
             if (howMany == 1) {
                 return new JavaScriptSerializer().Serialize(db.Stans.First());
             } else if (howMany > 1) {
-                return new JavaScriptSerializer().Serialize(db.Stans.Take(howMany).ToList());
+                int total = db.Stans.Count();
+                int random = new Random().Next(total - howMany);
+                var list = from item in db.Stans.ToList()
+                            orderby new Random().Next()
+                            select item;
+                return new JavaScriptSerializer().Serialize(list.Skip(random).Take(howMany).ToList());
             }
             return "Error: use howMany = 1 or bigger! \n" +
                 "Example: ../Api/Get?howMany=3";
