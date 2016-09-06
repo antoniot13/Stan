@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-6">
             @{string fName = @Html.DisplayFor(model => model.Id) + "_" + @Html.DisplayFor(model => model.GazdaId) + ".jpg"; }
-            <img class="img-responsive" src="~/Images/@fName" height="250" width="450" alt="">
+            <img class="img-responsive img-rounded" src="~/Images/@fName" height="250" width="450" alt="">
         </div>
         <div class="col-md-6">
             <div class="col-md-12">
@@ -102,12 +102,12 @@
         <div class="col-md-3" style="margin-bottom:20px" ng-repeat="item in suggestions">
             <div class="well thumbnail">
                 
-                <img class="img-responsive img-rounded" src="~/Images/{{item.Id}}_{{item.GazdaId}}.jpg" height="150" width="150">
+                <img class="img-responsive img-rounded" src="~/Images/{{item.Id}}_{{item.GazdaId}}.jpg" style="height:100px !important; width: 150px !important">
                 <div class="caption">
                     <p>Локација: {{item.Lokacija}} </p>
                     <p>Квадратура: {{item.Kvadratura}} m2</p>
                     <p>Број на соби: {{item.BrojNaSobi}}</p>
-                    <p>Цена: {{item.Cena}}</p>
+                    <p>Цена: {{item.Cena}} €</p>
                     <div class="row">
                         <div class="col-md-6 col-md-offset-6">
                             <p>

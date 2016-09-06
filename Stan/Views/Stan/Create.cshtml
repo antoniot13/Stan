@@ -15,35 +15,7 @@
 
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <!--<div class="form-group">
-            @Html.LabelFor(model => model.GazdaId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.GazdaId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.GazdaId, "", new { @class = "text-danger" })
-            </div>
-        </div>-->
-        <!--   <div class="row">
-               <div class="col-md-12 ">
-                   <div class="col-md-6">
-                       <div class="form-group">
-                           <div class="col-md-12">
-                               @Html.TextBoxFor(model => model.Kvadratura, new { placeholder="Локација" })
-                               @Html.ValidationMessageFor(model => model.Kvadratura, "", new { @class = "text-danger" })
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-6">
-                       <div class="form-group">
-                           @Html.LabelFor(model => model.BrojNaSobi, htmlAttributes: new { @class = "control-label col-md-2" })
-                           <div class="col-md-4">
-                               @Html.EditorFor(model => model.BrojNaSobi, new { htmlAttributes = new { @class = "form-control" } })
-                               @Html.ValidationMessageFor(model => model.BrojNaSobi, "", new { @class = "text-danger" })
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div> -->
-
+        
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ">
@@ -185,6 +157,11 @@
             </div>
             </div>
             }
+
+            <div id="chart">
+
+            </div>
+
 
             <div>
                 @Html.ActionLink("Назад", "Index")

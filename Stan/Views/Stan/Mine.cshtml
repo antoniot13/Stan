@@ -5,6 +5,7 @@
 }
 
 <h2>Мои станови</h2>
+<hr />
 
 <div class="row">
         <div class="col-md-12">
@@ -15,7 +16,7 @@
                     <div class="thumbnail">
                         <div class="row text-center">
                             @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
-                            <img class="img-thumbnail" src="~/Images/@fName" height="200" width="150" />
+                            <img class="img-thumbnail" src="~/Images/@fName" style="height:150px !important; width: 200px !important" />
                         </div>
                         <div class="row caption">
                             <div class="col-md-6 text-center">
@@ -23,7 +24,7 @@
                                 <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
                                 <p>Број на соби: @Html.DisplayFor(modelItem => item.BrojNaSobi)</p>
                                 <p>Спрат: @Html.DisplayFor(modelItem => item.NaKojSprat)</p>
-                                <p>Цена: @Html.DisplayFor(modelItem => item.Cena)</p>
+                                <p>Цена: @Html.DisplayFor(modelItem => item.Cena) €</p>
                             </div>
                             <div class="col-md-6  text-center">
                                 <p>Лифт: @Html.DisplayFor(modelItem => item.ImaLift) </p>

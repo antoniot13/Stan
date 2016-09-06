@@ -51,12 +51,12 @@
                 <div class="col-md-3" style="margin-bottom:20px">
                     <div class="thumbnail">
                         @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
-                        <img class="img-thumbnail" src="~/Images/@fName" height="200" width="150" />
+                        <img class="img-thumbnail" src="~/Images/@fName" style="height:150px !important; width: 200px !important"  />
                         <div class="caption">
                             <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>
                             <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
                             <p>Број на соби: @Html.DisplayFor(modelItem => item.BrojNaSobi)</p>
-                            <p>Цена: @Html.DisplayFor(modelItem => item.Cena)</p>
+                            <p>Цена: @Html.DisplayFor(modelItem => item.Cena) €</p>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-6">
                                     <p>

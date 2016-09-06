@@ -25,6 +25,8 @@ namespace Stan {
                       "~/Content/site.css"));          
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include("~/Scripts/angular.js", "~/Scripts/app.js"));
+
+            //bundles.Add(new ScriptBundle("~/Scripts/c3").Include("~/Scripts/c3/c3.css", "~/Scripts/c3/d3.min.js", "~/Scripts/c3/c3.min.js", "~/Scripts/chart.js"));
         }
     }
 }
