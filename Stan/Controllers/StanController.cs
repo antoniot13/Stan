@@ -43,7 +43,7 @@ namespace Stan.Controllers
                                          stan.Kvadratura <= kvDo &&
                                          stan.Cena >= ceOd &&
                                          stan.Cena <= ceDo &&
-                                         stan.Lokacija == Lokacija
+                                         stan.Lokacija.Contains(Lokacija)
                                          orderby stan.Cena ascending
                                          select stan;
             
