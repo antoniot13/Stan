@@ -66,7 +66,7 @@ namespace Stan.Models
     {
 
         [Required]
-        [Display(Name = "КОрисничко име")]
+        [Display(Name = "Корисничко име")]
         public string Username { get; set; }
 
         [Required]
