@@ -11,25 +11,45 @@
 
             @foreach (var item in Model)
             {
-                <div class="col-md-3" style="margin-bottom:20px">
+                <div class="col-md-4" style="margin-bottom:20px">
                     <div class="thumbnail">
-                        @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
-                        <img class="img-thumbnail" src="~/Images/@fName" height="200" width="150" />
-                        <div class="caption">
-                            <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>
-                            <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
-                            <p>Број на соби: @Html.DisplayFor(modelItem => item.BrojNaSobi)</p>
-                            <p>Цена: @Html.DisplayFor(modelItem => item.Cena)</p>
+                        <div class="row text-center">
+                            @{string fName = item.Id + "_" + item.GazdaId + ".jpg"; }
+                            <img class="img-thumbnail" src="~/Images/@fName" height="200" width="150" />
+                        </div>
+                        <div class="row caption">
+                            <div class="col-md-6 text-center">
+                                <p>Локација: @Html.DisplayFor(modelItem => item.Lokacija) </p>
+                                <p>Квадратура: @Html.DisplayFor(modelItem => item.Kvadratura) m2</p>
+                                <p>Број на соби: @Html.DisplayFor(modelItem => item.BrojNaSobi)</p>
+                                <p>Спрат: @Html.DisplayFor(modelItem => item.NaKojSprat)</p>
+                                <p>Цена: @Html.DisplayFor(modelItem => item.Cena)</p>
+                            </div>
+                            <div class="col-md-6  text-center">
+                                <p>Лифт: @Html.DisplayFor(modelItem => item.ImaLift) </p>
+                                <p>Кујна: @Html.DisplayFor(modelItem => item.ImaKujna)</p>
+                                <p>Тоалет: @Html.DisplayFor(modelItem => item.ImaToalet)</p>
+                                <p>Тераса: @Html.DisplayFor(modelItem => item.ImaTerasa)</p>
+                                <p>Наместен: @Html.DisplayFor(modelItem => item.Namesten)</p>
+                            </div>
+                        </div>
                             <div class="row">
-                                <div class="col-md-6 col-md-offset-6">
+                                <div class="col-md-6 text-right">
                                     <p>
-                                        <a href='@Url.Action("Details", "Stan", new {id = item.Id })' class="btn btn-primary">Повеќе!</a>
+                                        <a href='@Url.Action("Edit", "Stan", new {id = item.Id })' class="btn btn-primary">Измени</a>
+                                    </p>
+                                </div>
+                                <div class="col-md-6 text-left">
+                                    <p>
+                                        <a href='@Url.Action("Delete", "Stan", new {id = item.Id })' class="btn btn-primary">Избриши</a>
                                     </p>
                                 </div>
                             </div>
-                        </div>
+
+
                     </div>
-                </div>
+                    </div>
+               
             }
         </div>
     </div>
