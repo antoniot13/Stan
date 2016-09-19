@@ -4,174 +4,188 @@
     ViewBag.Title = "Додади стан";
 }
 
-<h2>Додади стан</h2>
-
+<div class="row">
+    <div class="col-md-12">
+        <h2>Додади стан</h2>
+        <hr />
+    </div>
+</div>
 
 @using (Html.BeginForm("Create", "Stan", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-horizontal">
 
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.EditorFor(model => model.Lokacija, new { htmlAttributes = new { @class = "form-control", placeholder = "Локација" } })
-                                @Html.ValidationMessageFor(model => model.Lokacija, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-md-offset-2">
-                            <div class="form-group">
-                                @Html.EditorFor(model => model.Kvadratura, new { htmlAttributes = new { @class = "form-control", placeholder = "Квадратура" } })
-                                @Html.ValidationMessageFor(model => model.Kvadratura, "", new { @class = "text-danger" })
+                        <div class="col-md-10 ">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.Lokacija, new { htmlAttributes = new { @class = "form-control", placeholder = "Локација" } })
+                                        @Html.ValidationMessageFor(model => model.Lokacija, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-md-offset-2">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.Kvadratura, new { htmlAttributes = new { @class = "form-control", placeholder = "Квадратура" } })
+                                        @Html.ValidationMessageFor(model => model.Kvadratura, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-8">
                     <div class="row">
-                       <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.EditorFor(model => model.Cena, new { htmlAttributes = new { @class = "form-control", placeholder = "Цена" } })
-                                @Html.ValidationMessageFor(model => model.Cena, "", new { @class = "text-danger" })
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.Cena, new { htmlAttributes = new { @class = "form-control", placeholder = "Цена" } })
+                                        @Html.ValidationMessageFor(model => model.Cena, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-md-offset-2">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.BrojNaSobi, new { htmlAttributes = new { @class = "form-control", placeholder = "Број на соби" } })
+                                        @Html.ValidationMessageFor(model => model.BrojNaSobi, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-md-offset-2">
-                            <div class="form-group">
-                                @Html.EditorFor(model => model.BrojNaSobi, new { htmlAttributes = new { @class = "form-control", placeholder = "Број на соби" } })
-                                @Html.ValidationMessageFor(model => model.BrojNaSobi, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row" style="margin-left:2px">
-                        <div class="col-md-1 col-md-offset-1"  >
-                            <span>Лифт</span>
-                        </div>
-                        <div class="col-md-1 ">
-                            <span>Кујна</span>
-                        </div>
-                        <div class="col-md-1 ">
-                            <span>Тоалет</span>
-                        </div>
-                        <div class="col-md-1 ">
-                            <span>Тераса</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span>Наместен</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row" style="margin-top:10px">
-                <div class="col-md-12 ">
-                    <div class="row" >
-                        <div class="col-md-1 col-md-offset-1" >
-                            @Html.EditorFor(model => model.ImaLift, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
-                            @Html.ValidationMessageFor(model => model.ImaLift, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-1 " >
-                            @Html.EditorFor(model => model.ImaKujna, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
-                            @Html.ValidationMessageFor(model => model.ImaKujna, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-1 " >
-                            @Html.EditorFor(model => model.ImaToalet, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
-                            @Html.ValidationMessageFor(model => model.ImaToalet, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-1 ">
-                            @Html.EditorFor(model => model.ImaTerasa, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
-                            @Html.ValidationMessageFor(model => model.ImaTerasa, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-1" >
-                            @Html.EditorFor(model => model.Namesten, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
-                            @Html.ValidationMessageFor(model => model.Namesten, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row" style="margin-top:15px">
-                <div class="col-md-8">
                     <div class="row">
-
-                        <div class="col-md-4 ">
-                            <div class="form-group">
-                                @Html.TextAreaFor(model => model.Opis, new { @class = "form-control", @cols = 40, @rows = 6, @placeholder = "Додади опис на станот" })
-                                @Html.ValidationMessageFor(model => model.Opis, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-md-offset-2">
-                            <div class="form-group">
-                                @Html.EditorFor(model => model.NaKojSprat, new { htmlAttributes = new { @class = "form-control", placeholder = "Спрат" } })
-                                @Html.ValidationMessageFor(model => model.NaKojSprat, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group">
-                                @Html.EditorFor(model => model.KontaktBroj, new { htmlAttributes = new { @class = "form-control", placeholder = "Број за контакт" } })
-                                @Html.ValidationMessageFor(model => model.KontaktBroj, "", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group">
-                                @Html.EditorFor(model => model.KontaktIme, new { htmlAttributes = new { @class = "form-control", placeholder = "Вашето име" } })
-                                @Html.ValidationMessageFor(model => model.KontaktIme, "", new { @class = "text-danger" })
+                        <div class="col-md-12">
+                            <div class="row" style="margin-left:2px">
+                                <div class="col-md-1 col-md-offset-1">
+                                    <span>Лифт</span>
+                                </div>
+                                <div class="col-md-1 ">
+                                    <span>Кујна</span>
+                                </div>
+                                <div class="col-md-1 ">
+                                    <span>Тоалет</span>
+                                </div>
+                                <div class="col-md-1 ">
+                                    <span>Тераса</span>
+                                </div>
+                                <div class="col-md-1">
+                                    <span>Наместен</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Slika -->
-            <div class="row"  style="margin-top:15px">
-                <div class="col-md-8">
-                    <div class="row">
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-12 ">
+                            <div class="row" style="margin-left:10px">
+                                <div class="col-md-1 col-md-offset-1">
+                                    @Html.EditorFor(model => model.ImaLift, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
+                                    @Html.ValidationMessageFor(model => model.ImaLift, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-1 ">
+                                    @Html.EditorFor(model => model.ImaKujna, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
+                                    @Html.ValidationMessageFor(model => model.ImaKujna, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-1 ">
+                                    @Html.EditorFor(model => model.ImaToalet, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
+                                    @Html.ValidationMessageFor(model => model.ImaToalet, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-1 ">
+                                    @Html.EditorFor(model => model.ImaTerasa, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
+                                    @Html.ValidationMessageFor(model => model.ImaTerasa, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-1">
+                                    @Html.EditorFor(model => model.Namesten, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })
+                                    @Html.ValidationMessageFor(model => model.Namesten, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top:15px">
+                        <div class="col-md-10">
+                            <div class="row">
+
+                                <div class="col-md-4 ">
+                                    <div class="form-group">
+                                        @Html.TextAreaFor(model => model.Opis, new { @class = "form-control", @cols = 40, @rows = 6, @placeholder = "Додади опис на станот", style = "resize:none" })
+                                        @Html.ValidationMessageFor(model => model.Opis, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-md-offset-2">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.NaKojSprat, new { htmlAttributes = new { @class = "form-control", placeholder = "Спрат" } })
+                                        @Html.ValidationMessageFor(model => model.NaKojSprat, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.KontaktBroj, new { htmlAttributes = new { @class = "form-control", placeholder = "Број за контакт" } })
+                                        @Html.ValidationMessageFor(model => model.KontaktBroj, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.KontaktIme, new { htmlAttributes = new { @class = "form-control", placeholder = "Вашето име" } })
+                                        @Html.ValidationMessageFor(model => model.KontaktIme, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slika -->
+                    <div class="row" style="margin-top:15px">
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-3" style="font-weight:bold; font-size:1em">Прикачи слика</div>
+                                    <div class="col-md-8">
+                                        <input type="file" name="file" id="file" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:15px">
                         <div class="form-group">
-                            <div class="col-md-3" style="font-weight:bold; font-size:1em">Прикачи слика</div>
-                            <div class="col-md-9">
-                                <input type="file" name="file" id="file" />
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Крај" class="btn btn-primary btn-block" />
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-            <div class="row" style="margin-top:15px">
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Крај" class="btn btn-primary btn-block" />
-                    </div>
-                </div>
-                </div>
-            <div class="row">
-                <div class="col-md-offset-8 col-md-4">
-                    <div id="chart"></div>
-                </div>
             </div>
+        </div>
 
-            </div>
-            </div>
-            }
+        <div class="col-md-3">
+            <h4>Статистика според општини</h4>
+            <div id="chart"></div>
+        </div>
 
-          
 
 
-            <div>
-                @Html.ActionLink("Назад", "Index")
-            </div>
+    </div>
 
-            @section Scripts {
-                @Scripts.Render("~/bundles/jqueryval")
-            }
+
+}
+
+
+
+
+
+
+<div>
+    @Html.ActionLink("Назад", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 
 
