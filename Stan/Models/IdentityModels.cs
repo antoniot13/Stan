@@ -32,4 +32,5 @@ namespace Stan.Models
 
         public System.Data.Entity.DbSet<Stan.SQLData.Stan> Stans { get; set; }
     }
+    
 }
